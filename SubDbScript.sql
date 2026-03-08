@@ -1,98 +1,101 @@
 USE [master]
 GO
-/****** Object:  Database [USER_DATA]    Script Date: 08/03/2026 11:20:50 ص ******/
-CREATE DATABASE [USER_DATA]
- CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'USER_DATA', FILENAME = N'D:\SYSTEMS\ALMEDADSOFT_GOLDENSYSTEM\SYSTEM_SALES\DATA\USER_DATA.mdf' , SIZE = 3392KB , MAXSIZE = UNLIMITED, FILEGROWTH = 10%)
- LOG ON 
-( NAME = N'USER_DATA_log', FILENAME = N'D:\SYSTEMS\ALMEDADSOFT_GOLDENSYSTEM\SYSTEM_SALES\DATA\USER_DATA_log.ldf' , SIZE = 38016KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+/****** Object:  Database [{0}]    Script Date: 08/03/2026 11:20:50 طµ ******/
+CREATE DATABASE [{0}]
 GO
-ALTER DATABASE [USER_DATA] SET COMPATIBILITY_LEVEL = 100
+ALTER DATABASE [{0}] SET COMPATIBILITY_LEVEL = 100
 GO
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
 begin
-EXEC [USER_DATA].[dbo].[sp_fulltext_database] @action = 'enable'
+EXEC [{0}].[dbo].[sp_fulltext_database] @action = 'enable'
 end
 GO
-ALTER DATABASE [USER_DATA] SET ANSI_NULL_DEFAULT OFF 
+ALTER DATABASE [{0}] SET ANSI_NULL_DEFAULT OFF 
 GO
-ALTER DATABASE [USER_DATA] SET ANSI_NULLS OFF 
+ALTER DATABASE [{0}] SET ANSI_NULLS OFF 
 GO
-ALTER DATABASE [USER_DATA] SET ANSI_PADDING OFF 
+ALTER DATABASE [{0}] SET ANSI_PADDING OFF 
 GO
-ALTER DATABASE [USER_DATA] SET ANSI_WARNINGS OFF 
+ALTER DATABASE [{0}] SET ANSI_WARNINGS OFF 
 GO
-ALTER DATABASE [USER_DATA] SET ARITHABORT OFF 
+ALTER DATABASE [{0}] SET ARITHABORT OFF 
 GO
-ALTER DATABASE [USER_DATA] SET AUTO_CLOSE ON 
+ALTER DATABASE [{0}] SET AUTO_CLOSE ON 
 GO
-ALTER DATABASE [USER_DATA] SET AUTO_SHRINK OFF 
+ALTER DATABASE [{0}] SET AUTO_SHRINK OFF 
 GO
-ALTER DATABASE [USER_DATA] SET AUTO_UPDATE_STATISTICS ON 
+ALTER DATABASE [{0}] SET AUTO_UPDATE_STATISTICS ON 
 GO
-ALTER DATABASE [USER_DATA] SET CURSOR_CLOSE_ON_COMMIT OFF 
+ALTER DATABASE [{0}] SET CURSOR_CLOSE_ON_COMMIT OFF 
 GO
-ALTER DATABASE [USER_DATA] SET CURSOR_DEFAULT  GLOBAL 
+ALTER DATABASE [{0}] SET CURSOR_DEFAULT  GLOBAL 
 GO
-ALTER DATABASE [USER_DATA] SET CONCAT_NULL_YIELDS_NULL OFF 
+ALTER DATABASE [{0}] SET CONCAT_NULL_YIELDS_NULL OFF 
 GO
-ALTER DATABASE [USER_DATA] SET NUMERIC_ROUNDABORT OFF 
+ALTER DATABASE [{0}] SET NUMERIC_ROUNDABORT OFF 
 GO
-ALTER DATABASE [USER_DATA] SET QUOTED_IDENTIFIER OFF 
+ALTER DATABASE [{0}] SET QUOTED_IDENTIFIER OFF 
 GO
-ALTER DATABASE [USER_DATA] SET RECURSIVE_TRIGGERS OFF 
+ALTER DATABASE [{0}] SET RECURSIVE_TRIGGERS OFF 
 GO
-ALTER DATABASE [USER_DATA] SET  DISABLE_BROKER 
+ALTER DATABASE [{0}] SET  DISABLE_BROKER 
 GO
-ALTER DATABASE [USER_DATA] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+ALTER DATABASE [{0}] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
 GO
-ALTER DATABASE [USER_DATA] SET DATE_CORRELATION_OPTIMIZATION OFF 
+ALTER DATABASE [{0}] SET DATE_CORRELATION_OPTIMIZATION OFF 
 GO
-ALTER DATABASE [USER_DATA] SET TRUSTWORTHY OFF 
+ALTER DATABASE [{0}] SET TRUSTWORTHY OFF 
 GO
-ALTER DATABASE [USER_DATA] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+ALTER DATABASE [{0}] SET ALLOW_SNAPSHOT_ISOLATION OFF 
 GO
-ALTER DATABASE [USER_DATA] SET PARAMETERIZATION SIMPLE 
+ALTER DATABASE [{0}] SET PARAMETERIZATION SIMPLE 
 GO
-ALTER DATABASE [USER_DATA] SET READ_COMMITTED_SNAPSHOT OFF 
+ALTER DATABASE [{0}] SET READ_COMMITTED_SNAPSHOT OFF 
 GO
-ALTER DATABASE [USER_DATA] SET HONOR_BROKER_PRIORITY OFF 
+ALTER DATABASE [{0}] SET HONOR_BROKER_PRIORITY OFF 
 GO
-ALTER DATABASE [USER_DATA] SET RECOVERY FULL 
+ALTER DATABASE [{0}] SET RECOVERY FULL 
 GO
-ALTER DATABASE [USER_DATA] SET  MULTI_USER 
+ALTER DATABASE [{0}] SET  MULTI_USER 
 GO
-ALTER DATABASE [USER_DATA] SET PAGE_VERIFY CHECKSUM  
+ALTER DATABASE [{0}] SET PAGE_VERIFY CHECKSUM  
 GO
-ALTER DATABASE [USER_DATA] SET DB_CHAINING OFF 
+ALTER DATABASE [{0}] SET DB_CHAINING OFF 
 GO
-ALTER DATABASE [USER_DATA] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+ALTER DATABASE [{0}] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
 GO
-ALTER DATABASE [USER_DATA] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+ALTER DATABASE [{0}] SET TARGET_RECOVERY_TIME = 0 SECONDS 
 GO
-ALTER DATABASE [USER_DATA] SET DELAYED_DURABILITY = DISABLED 
+ALTER DATABASE [{0}] SET DELAYED_DURABILITY = DISABLED 
 GO
-ALTER DATABASE [USER_DATA] COLLATE Arabic_CI_AS 
+ALTER DATABASE [{0}] COLLATE Arabic_CI_AS 
 GO
-USE [USER_DATA]
+USE [{0}]
 GO
-/****** Object:  User [wesam]    Script Date: 08/03/2026 11:20:50 ص ******/
+/****** Object:  User [wesam]    Script Date: 08/03/2026 11:20:50 طµ ******/
 CREATE USER [wesam] WITHOUT LOGIN WITH DEFAULT_SCHEMA=[dbo]
 GO
-/****** Object:  Table [dbo].[send_to_net]    Script Date: 08/03/2026 11:20:50 ص ******/
+/****** Object:  Table [dbo].[send_to_net]    Script Date: 08/03/2026 11:20:50 طµ ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[send_to_net](
-	[id] [int] IDENTITY(1,1) NOT NULL,
-	[id_s] [int] NULL,
-	[point_id] [int] NULL,
-	[statement] [nvarchar](4000) NULL,
-	[read_date] [smalldatetime] NULL,
-	[typ] [int] NULL,
-	[Done] [int] NULL,
+[id] [int] IDENTITY(1,1) NOT NULL,
+[id_s] [int] NULL,
+[point_id] [int] NULL,
+[statement] [nvarchar](4000) NULL,
+[read_date] [smalldatetime] NULL,
+[typ] [int] NULL,
+[Done] [int] NULL,
+[exequte] [nvarchar](4000) NULL,
+[point_num] [int] NULL,
+[user_id] [int] NULL,
+[file_name] [nvarchar](50) NULL,
+[typ_file] [nvarchar](50) NULL,
+[srch_item] [nvarchar](50) NULL,
+[srch_cust] [nvarchar](50) NULL,
+[srch_file] [nvarchar](50) NULL,
  CONSTRAINT [PK_send_to_net] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -105,7 +108,7 @@ ALTER TABLE [dbo].[send_to_net] ADD  CONSTRAINT [DF_send_to_net_typ]  DEFAULT ((
 GO
 ALTER TABLE [dbo].[send_to_net] ADD  CONSTRAINT [DF_send_to_net_Done]  DEFAULT ((0)) FOR [Done]
 GO
-/****** Object:  StoredProcedure [dbo].[ard_details]    Script Date: 08/03/2026 11:20:51 ص ******/
+/****** Object:  StoredProcedure [dbo].[ard_details]    Script Date: 08/03/2026 11:20:51 طµ ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -160,7 +163,7 @@ if @state=3
        ORDER BY id
     end
 GO
-/****** Object:  StoredProcedure [dbo].[backup_db]    Script Date: 08/03/2026 11:20:51 ص ******/
+/****** Object:  StoredProcedure [dbo].[backup_db]    Script Date: 08/03/2026 11:20:51 طµ ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -169,7 +172,7 @@ CREATE PROCEDURE [dbo].[backup_db] (@Name varchar(100),@dbName varchar(100))
 as
 backup database @dbName to disk=@name with init
 GO
-/****** Object:  StoredProcedure [dbo].[CREATE_data_base]    Script Date: 08/03/2026 11:20:51 ص ******/
+/****** Object:  StoredProcedure [dbo].[CREATE_data_base]    Script Date: 08/03/2026 11:20:51 طµ ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -217,14 +220,14 @@ set @mysql13='   FILEGROWTH = 5MB )'
 	execute sp_executesql @mysql12
 	execute sp_executesql @mysql13
 GO
-/****** Object:  StoredProcedure [dbo].[CreateTables]    Script Date: 08/03/2026 11:20:51 ص ******/
+/****** Object:  StoredProcedure [dbo].[CreateTables]    Script Date: 08/03/2026 11:20:51 طµ ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE Procedure [dbo].[CreateTables] (@TypeCode integer)  AS BEGIN  declare @sql table(s nvarchar(Max), id int identity)  insert into  @sql(s) select Script from ActivitySystem.dbo.Users_Scripts order by Script_Num  declare @Rows integer  set @Rows=( Select Count(*) From @sql)  declare @int integer  set @int =0  declare @CreateStatement nvarchar(max)  while @int< @Rows  Begin  set  @int= @int+1  set @CreateStatement=( Select s From @sql where id=@int)  BEGIN TRY  EXEC (@CreateStatement)  END TRY  begin Catch  End Catch  end  end
 GO
-/****** Object:  StoredProcedure [dbo].[db_backup]    Script Date: 08/03/2026 11:20:51 ص ******/
+/****** Object:  StoredProcedure [dbo].[db_backup]    Script Date: 08/03/2026 11:20:51 طµ ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -235,7 +238,7 @@ as
 select @name=@name+CONVERT(char(8), GETDATE(), 10)+'.bak'
 backup database @db to disk=@name with init
 GO
-/****** Object:  StoredProcedure [dbo].[db_Restore]    Script Date: 08/03/2026 11:20:51 ص ******/
+/****** Object:  StoredProcedure [dbo].[db_Restore]    Script Date: 08/03/2026 11:20:51 طµ ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -248,7 +251,7 @@ execute sp_executesql @name
 
 --restore database @db from disk = @name
 GO
-/****** Object:  StoredProcedure [dbo].[Kill_Users]    Script Date: 08/03/2026 11:20:51 ص ******/
+/****** Object:  StoredProcedure [dbo].[Kill_Users]    Script Date: 08/03/2026 11:20:51 طµ ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -294,7 +297,7 @@ End
 Close C_Users
 DeAllocate C_Users
 GO
-/****** Object:  StoredProcedure [dbo].[max_bass]    Script Date: 08/03/2026 11:20:51 ص ******/
+/****** Object:  StoredProcedure [dbo].[max_bass]    Script Date: 08/03/2026 11:20:51 طµ ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -303,7 +306,7 @@ CREATE PROCEDURE [dbo].[max_bass] @point_num int   AS
 
 select max(id) from send_to_net where  point_num=@point_num
 GO
-/****** Object:  StoredProcedure [dbo].[resive_data]    Script Date: 08/03/2026 11:20:51 ص ******/
+/****** Object:  StoredProcedure [dbo].[resive_data]    Script Date: 08/03/2026 11:20:51 طµ ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -313,7 +316,7 @@ select  *  from send_to_net
  where  point_num=@point_num and id>@id
  order by read_date,id
 GO
-/****** Object:  StoredProcedure [dbo].[restore_db]    Script Date: 08/03/2026 11:20:51 ص ******/
+/****** Object:  StoredProcedure [dbo].[restore_db]    Script Date: 08/03/2026 11:20:51 طµ ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -322,7 +325,7 @@ CREATE PROCEDURE [dbo].[restore_db] (@name varchar(100), @dbName varchar(100)) a
 
 restore database @dbName  from disk = @name
 GO
-/****** Object:  StoredProcedure [dbo].[tran_send_to_net]    Script Date: 08/03/2026 11:20:51 ص ******/
+/****** Object:  StoredProcedure [dbo].[tran_send_to_net]    Script Date: 08/03/2026 11:20:51 طµ ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -400,7 +403,7 @@ begin
 		values (@id9,@exequte9,@point_num9,@user_id9,@file_name9,@typ_file9,@srch_item9,@srch_cust9,@srch_file9)
 end
 GO
-/****** Object:  StoredProcedure [dbo].[tran_send_to_net_s]    Script Date: 08/03/2026 11:20:51 ص ******/
+/****** Object:  StoredProcedure [dbo].[tran_send_to_net_s]    Script Date: 08/03/2026 11:20:51 طµ ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -415,5 +418,6 @@ values (@id0,@exequte0,100,@user_id0,@file_name0,@typ_file0,@srch_item0,@srch_cu
 GO
 USE [master]
 GO
-ALTER DATABASE [USER_DATA] SET  READ_WRITE 
+ALTER DATABASE [{0}] SET  READ_WRITE 
 GO
+
